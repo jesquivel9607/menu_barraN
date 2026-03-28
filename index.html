@@ -5,11 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fit & Fresh - Menú</title>
   <style>
-    /* Colores basados en el logo: naranja y verde */
     :root {
       --primary-color: #ff7043; /* naranja */
       --secondary-color: #4caf50; /* verde */
-      --bg-color: #fff8f0; /* fondo suave */
+      --bg-color: #fff8f0;
       --text-color: #333;
     }
 
@@ -18,13 +17,18 @@
       font-family: 'Arial', sans-serif;
       background-color: var(--bg-color);
       color: var(--text-color);
+      scroll-behavior: smooth;
     }
 
+    /* HEADER y NAV */
     header {
       background-color: var(--primary-color);
       color: white;
       padding: 20px;
       text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     header img {
@@ -38,15 +42,31 @@
       font-size: 2rem;
     }
 
-    header p {
-      margin: 5px 0 0 0;
-      font-size: 1.1rem;
+    header nav {
+      margin-top: 10px;
     }
 
+    header nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    header nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Secciones */
     section {
       padding: 20px;
       max-width: 900px;
       margin: auto;
+    }
+
+    .intro {
+      font-size: 1.1rem;
+      margin-bottom: 25px;
     }
 
     h2 {
@@ -83,155 +103,191 @@
       margin-top: 30px;
     }
 
-    /* Responsive para celulares */
     @media(max-width:600px) {
       .menu-item span.price {
         float: none;
         display: block;
         margin-top: 5px;
       }
+
+      header nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      header nav a {
+        margin: 5px 0;
+      }
     }
 
-    /* Detalles destacados */
     .highlight {
       color: var(--primary-color);
       font-weight: bold;
-    }
-
-    .section-description {
-      font-style: italic;
-      color: #555;
-      margin-bottom: 15px;
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- HEADER CON NAV -->
   <header>
     <img src="logo.png" alt="Logo Fit & Fresh">
     <h1>Fit & Fresh</h1>
-    <p>Bebidas, smoothies, licuados y snacks saludables para tu día a día</p>
+    <nav>
+      <a href="#cafe">Café</a>
+      <a href="#te">Tés</a>
+      <a href="#tes-funcionales">Tés Funcionales</a>
+      <a href="#smoothies">Smoothies</a>
+      <a href="#licuados">Licuados</a>
+      <a href="#aguas">Aguas / Sueros</a>
+      <a href="#comidas">Comidas / Snacks</a>
+    </nav>
   </header>
 
+  <!-- DESCRIPCIÓN -->
+  <section class="intro">
+    <p>En <strong>Fit & Fresh</strong> encontrarás bebidas y snacks diseñados para acompañar tu estilo de vida saludable y fitness. 
+    Desde cafés energizantes hasta smoothies funcionales, licuados y comidas ligeras, cada opción está pensada para aportar nutrición, sabor y energía. 
+    Ideal para deportistas, amantes del bienestar y cualquiera que busque cuidar su cuerpo sin sacrificar el sabor.</p>
+  </section>
+
   <!-- MENÚ -->
-  <section>
 
-    <h2>Bebidas</h2>
-
+  <!-- CAFÉ -->
+  <section id="cafe">
+    <h2>☕ CAFÉ</h2>
     <div class="menu-item">
-      <span class="name">Café</span>
+      <span class="name">Café americano</span>
       <span class="price">$25</span>
     </div>
     <div class="menu-item">
       <span class="name">Café con leche</span>
       <span class="price">$35</span>
-      <p>(entera, deslactosada, almendras)</p>
+      <p>(Entera / Deslactosada / Almendra)</p>
     </div>
+  </section>
 
+  <!-- TÉS -->
+  <section id="te">
+    <h2>🍵 TÉS</h2>
     <div class="menu-item">
-      <span class="name">Tés</span>
+      <span class="name">Té caliente o frío</span>
       <span class="price">$25</span>
-      <p>(Caliente o frío: negro, verde, manzanilla, menta, hierbabuena, frutos rojos, cúrcuma, chai)</p>
+      <p>Negro · Verde · Manzanilla · Menta · Hierbabuena · Frutos Rojos · Cúrcuma · Chai</p>
     </div>
+  </section>
 
+  <!-- TÉS FUNCIONALES -->
+  <section id="tes-funcionales">
+    <h2>🔥 TÉS FUNCIONALES – $35</h2>
     <div class="menu-item">
-      <span class="name">Tés Funcionales</span>
-      <span class="price">$35</span>
-      <p class="highlight">⚡PRE-WOD BOOST</p>
-      <p>Activa tu energía antes de entrenar. Té verde + jengibre + limón. 🔥Termogénico natural</p>
-      <p class="highlight">💪🏼RECOVERY INFUSION</p>
-      <p>Recuperación y antiinflamatorio natural. Té de cúrcuma + pimienta negra + miel</p>
-      <p class="highlight">🌿CLEAN DETOX</p>
-      <p>Ligero y digestivo. Té de menta + manzanilla + hierbabuena. Agrega colágeno +$25</p>
-    </div>
+      <p class="highlight">⚡ PRE-WOD BOOST</p>
+      <p>Té verde + jengibre + limón | 🔥 Termogénico natural | ⚡ Energía y enfoque antes del entrenamiento</p>
 
+      <p class="highlight">💪 RECOVERY INFUSION</p>
+      <p>Té de cúrcuma + pimienta negra + miel | 🛡️ Antioxidante natural | 🦵 Ideal después de entrenamientos intensos</p>
+
+      <p class="highlight">🌿 CLEAN DETOX</p>
+      <p>Menta + manzanilla + hierbabuena | 💧 Digestivo y antiinflamatorio | 👏 Perfecto después de comer</p>
+
+      <p>➕ Agrega colágeno +$25</p>
+    </div>
+  </section>
+
+  <!-- SMOOTHIES -->
+  <section id="smoothies">
+    <h2>🥤 SMOOTHIES FUNCIONALES – $50</h2>
     <div class="menu-item">
-      <span class="name">Smoothies</span>
-      <span class="price">$50</span>
-      <p>⚡WOD POWER (Pre-entreno): Plátano + avena o amaranto + crema de cacahuate + leche + café(opcional)</p>
-      <p>💥RECOVERY BEAST (Post-entreno): Fresa + frutos rojos + yogurt griego + leche + semillas de chía</p>
-      <p>☘️GREEN ATHLETE: Espinacas + piña + pepino + apio + jengibre + agua de coco</p>
-      <p>Agregos: Proteína +35, Espirulina +20</p>
-    </div>
+      <p class="highlight">⚡ WOD POWER (Pre-entreno)</p>
+      <p>Plátano + avena/amaranto + crema de cacahuate + leche + café opcional | ⚡ Energía limpia para romper tu PR</p>
 
+      <p class="highlight">💥 RECOVERY BEAST (Post-entreno)</p>
+      <p>Fresa + frutos rojos + yogurt griego + leche + chía | 🛡️ Recuperación muscular + antioxidantes</p>
+
+      <p class="highlight">☘️ GREEN ATHLETE</p>
+      <p>Espinaca + piña + pepino + apio + jengibre + agua de coco | 🥤 Hidratación + digestión + composición corporal</p>
+
+      <p>➕ Proteína +$35 | ➕ Espirulina +$20</p>
+    </div>
+  </section>
+
+  <!-- LICUADOS -->
+  <section id="licuados">
+    <h2>🥛 LICUADOS – $50</h2>
     <div class="menu-item">
-      <span class="name">Licuados</span>
-      <span class="price">$45</span>
-      <p>Fresa, plátano, manzana. Agrega avena, amaranto, cocoa +$10</p>
+      <p>Fresa · Plátano · Manzana</p>
+      <p>Agrega avena / amaranto / cocoa +$10</p>
     </div>
+  </section>
 
+  <!-- AGUAS / SUEROS -->
+  <section id="aguas">
+    <h2>💧 AGUAS NATURALES – $40 / ⚡ SUEROS ELECTROLÍTICOS – $45</h2>
     <div class="menu-item">
-      <span class="name">Aguas naturales</span>
-      <span class="price">$40</span>
-      <p>Fresa, limón, pepino, avena y piña</p>
+      <p>Fresa · Limón · Pepino · Avena · Piña</p>
+      <p class="highlight">🍊 ORANGE</p>
+      <p>Agua mineral o natural + limón + sal + miel + naranja</p>
+
+      <p class="highlight">🥥 COCONUT</p>
+      <p>Agua mineral o natural + limón + sal + agua de coco + jengibre</p>
+
+      <p class="highlight">🍓 BERRY</p>
+      <p>Agua mineral o natural + limón + sal + frutos rojos</p>
+
+      <p class="highlight">🍋 CLASSIC</p>
+      <p>Agua mineral o natural + limón + sal</p>
     </div>
+  </section>
 
-    <div class="menu-item">
-      <span class="name">Sueros</span>
-      <span class="price">$50</span>
-      <p>ORANGE 🍊: Agua mineral + limón + sal + miel + naranja</p>
-      <p>COCONUT 🥥: Agua mineral + limón + sal + agua de coco + jengibre</p>
-      <p>BERRY 🍓: Agua mineral + limón + sal + frutos rojos</p>
-      <p>CLASSIC 🍋: Agua mineral + limón + sal</p>
-    </div>
-
-    <h2>Snacks y Comidas</h2>
-
+  <!-- COMIDAS / SNACKS -->
+  <section id="comidas">
+    <h2>🥪 COMIDAS / SNACKS</h2>
     <div class="menu-item">
       <span class="name">Sándwiches</span>
       <span class="price">$45</span>
-      <p>Aguacate + espinaca + queso + proteína. Pepino + jitomate cherry + espinaca + aderezo + queso + proteína</p>
+      <p>Base integral + proteína a elegir: 🥑 Aguacate + espinaca + queso | 🥒 Pepino + jitomate cherry + espinaca + aderezo + queso</p>
     </div>
-
     <div class="menu-item">
       <span class="name">Chapatas</span>
       <span class="price">$65</span>
-      <p>Lechuga + pepino + manzana + mayonesa + queso + proteína</p>
-      <p>Lechuga + tomate cherry asado + pimiento asado + mayonesa + queso + proteína</p>
+      <p>🥬 Lechuga + pepino + manzana + mayonesa ligera + queso</p>
+      <p>🔥 Lechuga + tomate cherry asado + pimiento asado + mayonesa ligera + queso</p>
     </div>
-
     <div class="menu-item">
       <span class="name">Ensalada de la casa</span>
       <span class="price">$90</span>
-      <p>Lechuga + espinaca + jitomate cherry + pepino + pasta + aderezo + arándanos + queso + proteína + ajonjolí</p>
+      <p>Lechuga + espinaca + jitomate cherry + pepino + pasta + arándanos + queso + proteína + ajonjolí</p>
     </div>
-
     <div class="menu-item">
       <span class="name">Omelettes</span>
       <span class="price">$60</span>
       <p>Espinaca + queso o requesón, Champiñones + queso o requesón, Jamón + queso o requesón, Tres quesos</p>
     </div>
-
     <div class="menu-item">
       <span class="name">Quesadillas (3 pzas)</span>
       <span class="price">$60</span>
-      <p>Champiñones + queso o requesón, Flor de calabaza + queso o requesón, Pollo + queso o requesón</p>
+      <p>Champiñones / Flor de calabaza / Pollo (Todas con queso o requesón)</p>
     </div>
-
     <div class="menu-item">
       <span class="name">Crepa Fit</span>
       <span class="price">$60</span>
-      <p>Base de plátano + huevo + avena + cocoa + mantequilla, rellena de crema de cacahuate + plátano o fresa + maple</p>
+      <p>Base de plátano + huevo + avena + cocoa | Rellena de crema de cacahuate + fruta | Maple ligero</p>
     </div>
-
     <div class="menu-item">
       <span class="name">Pan Francés</span>
       <span class="price">$45</span>
-      <p>Pan bañado con huevo, leche y canela + yogurt griego + frutos rojos + maple</p>
+      <p>Pan integral + huevo + leche + canela | Yogurt griego + frutos rojos + maple</p>
     </div>
-
     <div class="menu-item">
       <span class="name">Bowl de frutas</span>
       <span class="price">$65</span>
-      <p>Manzana + plátano + yogurt griego + granola + chía, Frutos rojos + plátano + yogurt griego + granola + chía</p>
+      <p>Manzana o frutos rojos + plátano + yogurt griego + granola + chía</p>
     </div>
-
   </section>
 
   <!-- FOOTER -->
   <footer>
-    📍 Dirección: Calle Falsa 123, Ciudad | 📞 WhatsApp: +56 9 1234 5678 | 📧 Email: info@fitfresh.cl
+    📍 Dirección: Calle Falsa 123, Ciudad | 📞 WhatsApp: +56 9 1234 5678 | 📧 info@fitfresh.cl
   </footer>
 
 </body>
