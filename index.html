@@ -3,21 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menú Mi Emprendimiento</title>
+  <title>Fit & Fresh - Menú</title>
   <style>
+    /* Colores basados en el logo: naranja y verde */
+    :root {
+      --primary-color: #ff7043; /* naranja */
+      --secondary-color: #4caf50; /* verde */
+      --bg-color: #fff8f0; /* fondo suave */
+      --text-color: #333;
+    }
+
     body {
-      font-family: 'Arial', sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #fff8f0;
-      color: #333;
+      font-family: 'Arial', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
     }
 
     header {
-      background-color: #ff7043;
+      background-color: var(--primary-color);
       color: white;
       padding: 20px;
       text-align: center;
+    }
+
+    header img {
+      max-height: 80px;
+      display: block;
+      margin: 0 auto 10px auto;
     }
 
     header h1 {
@@ -25,92 +38,200 @@
       font-size: 2rem;
     }
 
+    header p {
+      margin: 5px 0 0 0;
+      font-size: 1.1rem;
+    }
+
     section {
       padding: 20px;
+      max-width: 900px;
+      margin: auto;
     }
 
     h2 {
-      border-bottom: 2px solid #ff7043;
+      color: var(--secondary-color);
+      border-bottom: 2px solid var(--primary-color);
       padding-bottom: 5px;
       margin-top: 30px;
     }
 
     .menu-item {
-      display: flex;
-      justify-content: space-between;
-      padding: 10px 0;
-      border-bottom: 1px dashed #ccc;
+      margin: 10px 0;
     }
 
-    .price {
+    .menu-item span.name {
       font-weight: bold;
     }
 
+    .menu-item span.price {
+      float: right;
+      font-weight: bold;
+    }
+
+    .menu-item p {
+      margin: 2px 0 0 0;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
     footer {
+      background-color: var(--primary-color);
+      color: white;
       text-align: center;
       padding: 15px;
-      background-color: #ff7043;
-      color: white;
       margin-top: 30px;
     }
 
+    /* Responsive para celulares */
     @media(max-width:600px) {
-      .menu-item {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .price {
+      .menu-item span.price {
+        float: none;
+        display: block;
         margin-top: 5px;
       }
+    }
+
+    /* Detalles destacados */
+    .highlight {
+      color: var(--primary-color);
+      font-weight: bold;
+    }
+
+    .section-description {
+      font-style: italic;
+      color: #555;
+      margin-bottom: 15px;
     }
   </style>
 </head>
 <body>
 
+  <!-- HEADER -->
   <header>
-    <h1>🍔 Mi Emprendimiento</h1>
-    <p>Menú del día</p>
+    <img src="logo.png" alt="Logo Fit & Fresh">
+    <h1>Fit & Fresh</h1>
+    <p>Bebidas, smoothies, licuados y snacks saludables para tu día a día</p>
   </header>
 
+  <!-- MENÚ -->
   <section>
-    <h2>Comidas</h2>
-    <div class="menu-item">
-      <span>Hamburguesa</span>
-      <span class="price">$5</span>
-    </div>
-    <div class="menu-item">
-      <span>Pizza</span>
-      <span class="price">$8</span>
-    </div>
-    <div class="menu-item">
-      <span>Ensalada</span>
-      <span class="price">$4</span>
-    </div>
 
     <h2>Bebidas</h2>
+
     <div class="menu-item">
-      <span>Coca-Cola</span>
-      <span class="price">$2</span>
+      <span class="name">Café</span>
+      <span class="price">$25</span>
     </div>
     <div class="menu-item">
-      <span>Agua Mineral</span>
-      <span class="price">$1.5</span>
+      <span class="name">Café con leche</span>
+      <span class="price">$35</span>
+      <p>(entera, deslactosada, almendras)</p>
     </div>
 
-    <h2>Postres</h2>
     <div class="menu-item">
-      <span>Helado</span>
-      <span class="price">$3</span>
+      <span class="name">Tés</span>
+      <span class="price">$25</span>
+      <p>(Caliente o frío: negro, verde, manzanilla, menta, hierbabuena, frutos rojos, cúrcuma, chai)</p>
     </div>
+
     <div class="menu-item">
-      <span>Torta de Chocolate</span>
-      <span class="price">$4</span>
+      <span class="name">Tés Funcionales</span>
+      <span class="price">$35</span>
+      <p class="highlight">⚡PRE-WOD BOOST</p>
+      <p>Activa tu energía antes de entrenar. Té verde + jengibre + limón. 🔥Termogénico natural</p>
+      <p class="highlight">💪🏼RECOVERY INFUSION</p>
+      <p>Recuperación y antiinflamatorio natural. Té de cúrcuma + pimienta negra + miel</p>
+      <p class="highlight">🌿CLEAN DETOX</p>
+      <p>Ligero y digestivo. Té de menta + manzanilla + hierbabuena. Agrega colágeno +$25</p>
     </div>
+
+    <div class="menu-item">
+      <span class="name">Smoothies</span>
+      <span class="price">$50</span>
+      <p>⚡WOD POWER (Pre-entreno): Plátano + avena o amaranto + crema de cacahuate + leche + café(opcional)</p>
+      <p>💥RECOVERY BEAST (Post-entreno): Fresa + frutos rojos + yogurt griego + leche + semillas de chía</p>
+      <p>☘️GREEN ATHLETE: Espinacas + piña + pepino + apio + jengibre + agua de coco</p>
+      <p>Agregos: Proteína +35, Espirulina +20</p>
+    </div>
+
+    <div class="menu-item">
+      <span class="name">Licuados</span>
+      <span class="price">$45</span>
+      <p>Fresa, plátano, manzana. Agrega avena, amaranto, cocoa +$10</p>
+    </div>
+
+    <div class="menu-item">
+      <span class="name">Aguas naturales</span>
+      <span class="price">$40</span>
+      <p>Fresa, limón, pepino, avena y piña</p>
+    </div>
+
+    <div class="menu-item">
+      <span class="name">Sueros</span>
+      <span class="price">$50</span>
+      <p>ORANGE 🍊: Agua mineral + limón + sal + miel + naranja</p>
+      <p>COCONUT 🥥: Agua mineral + limón + sal + agua de coco + jengibre</p>
+      <p>BERRY 🍓: Agua mineral + limón + sal + frutos rojos</p>
+      <p>CLASSIC 🍋: Agua mineral + limón + sal</p>
+    </div>
+
+    <h2>Snacks y Comidas</h2>
+
+    <div class="menu-item">
+      <span class="name">Sándwiches</span>
+      <span class="price">$45</span>
+      <p>Aguacate + espinaca + queso + proteína. Pepino + jitomate cherry + espinaca + aderezo + queso + proteína</p>
+    </div>
+
+    <div class="menu-item">
+      <span class="name">Chapatas</span>
+      <span class="price">$65</span>
+      <p>Lechuga + pepino + manzana + mayonesa + queso + proteína</p>
+      <p>Lechuga + tomate cherry asado + pimiento asado + mayonesa + queso + proteína</p>
+    </div>
+
+    <div class="menu-item">
+      <span class="name">Ensalada de la casa</span>
+      <span class="price">$90</span>
+      <p>Lechuga + espinaca + jitomate cherry + pepino + pasta + aderezo + arándanos + queso + proteína + ajonjolí</p>
+    </div>
+
+    <div class="menu-item">
+      <span class="name">Omelettes</span>
+      <span class="price">$60</span>
+      <p>Espinaca + queso o requesón, Champiñones + queso o requesón, Jamón + queso o requesón, Tres quesos</p>
+    </div>
+
+    <div class="menu-item">
+      <span class="name">Quesadillas (3 pzas)</span>
+      <span class="price">$60</span>
+      <p>Champiñones + queso o requesón, Flor de calabaza + queso o requesón, Pollo + queso o requesón</p>
+    </div>
+
+    <div class="menu-item">
+      <span class="name">Crepa Fit</span>
+      <span class="price">$60</span>
+      <p>Base de plátano + huevo + avena + cocoa + mantequilla, rellena de crema de cacahuate + plátano o fresa + maple</p>
+    </div>
+
+    <div class="menu-item">
+      <span class="name">Pan Francés</span>
+      <span class="price">$45</span>
+      <p>Pan bañado con huevo, leche y canela + yogurt griego + frutos rojos + maple</p>
+    </div>
+
+    <div class="menu-item">
+      <span class="name">Bowl de frutas</span>
+      <span class="price">$65</span>
+      <p>Manzana + plátano + yogurt griego + granola + chía, Frutos rojos + plátano + yogurt griego + granola + chía</p>
+    </div>
+
   </section>
 
+  <!-- FOOTER -->
   <footer>
-    Contáctanos: WhatsApp +569 1234 5678 | Dirección: Calle Falsa 123
+    📍 Dirección: Calle Falsa 123, Ciudad | 📞 WhatsApp: +56 9 1234 5678 | 📧 Email: info@fitfresh.cl
   </footer>
 
 </body>
