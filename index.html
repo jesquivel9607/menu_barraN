@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menú Mi Emprendimiento</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff8f0;
+      color: #333;
+    }
+
+    header {
+      background-color: #ff7043;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    section {
+      padding: 20px;
+    }
+
+    h2 {
+      border-bottom: 2px solid #ff7043;
+      padding-bottom: 5px;
+      margin-top: 30px;
+    }
+
+    .menu-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px dashed #ccc;
+    }
+
+    .price {
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #ff7043;
+      color: white;
+      margin-top: 30px;
+    }
+
+    @media(max-width:600px) {
+      .menu-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .price {
+        margin-top: 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🍔 Mi Emprendimiento</h1>
+    <p>Menú del día</p>
+  </header>
+
+  <section>
+    <h2>Comidas</h2>
+    <div class="menu-item">
+      <span>Hamburguesa</span>
+      <span class="price">$5</span>
+    </div>
+    <div class="menu-item">
+      <span>Pizza</span>
+      <span class="price">$8</span>
+    </div>
+    <div class="menu-item">
+      <span>Ensalada</span>
+      <span class="price">$4</span>
+    </div>
+
+    <h2>Bebidas</h2>
+    <div class="menu-item">
+      <span>Coca-Cola</span>
+      <span class="price">$2</span>
+    </div>
+    <div class="menu-item">
+      <span>Agua Mineral</span>
+      <span class="price">$1.5</span>
+    </div>
+
+    <h2>Postres</h2>
+    <div class="menu-item">
+      <span>Helado</span>
+      <span class="price">$3</span>
+    </div>
+    <div class="menu-item">
+      <span>Torta de Chocolate</span>
+      <span class="price">$4</span>
+    </div>
+  </section>
+
+  <footer>
+    Contáctanos: WhatsApp +569 1234 5678 | Dirección: Calle Falsa 123
+  </footer>
+
+</body>
+</html>
